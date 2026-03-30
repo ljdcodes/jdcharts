@@ -1,6 +1,6 @@
 # JDCharts
 
-Canvas charting (candlestick, volume, OHLC, line, area). Call **`chart.setData()`** with **`ChartData`**, then **`chart.updateChart()`**. There is no built-in feed. **`ChartContext`** is optional (header labels, bar interval).
+Canvas charting for financial market data!
 
 ## Scripts
 

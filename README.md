@@ -25,4 +25,4 @@ npm run preview
 
 ## Source
 
-[github.com/ljdcodes/jdcharts](https://github.com/ljdcodes/jdcharts) — clone for the demo; **`dist/`** is gitignored, so run **`npm run build`** first.
+[github.com/ljdcodes/jdcharts](https://github.com/ljdcodes/jdcharts)

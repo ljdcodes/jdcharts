@@ -18,6 +18,7 @@ await chart.updateChart();
 ## Scripts
 
 ```bash
+git clone https://github.com/ljdcodes/jdcharts.git
 npm install
 npm run build
 npm run preview

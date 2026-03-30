@@ -2,16 +2,6 @@
 
 Canvas charting for financial market data!
 
-## Scripts
-
-```bash
-npm install
-npm run build
-npm test
-npm run test:coverage
-npm run preview
-```
-
 ## Usage
 
 ```js
@@ -23,6 +13,14 @@ const chart = jd.createChart(options);
 
 chart.setData(myChartData as ChartData);
 await chart.updateChart();
+```
+
+## Scripts
+
+```bash
+npm install
+npm run build
+npm run preview
 ```
 
 ## Source

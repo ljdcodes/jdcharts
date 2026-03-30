@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDCharts</title>
+    <link rel="stylesheet" href="style/style.jdcharts.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1>JDChart Test</h1>
+    <section class="demo-dataset-panel" aria-label="Sample datasets">
+        <h2 class="demo-dataset-heading">Load sample data</h2>
+        <p class="demo-dataset-hint">Binance spot pairs. Click a row to load.</p>
+        <ul class="demo-dataset-list" id="jd-dataset-list"></ul>
+    </section>
+    <div class="chart-outer unselectable">
+        <div class="chart-header">
+            <div class="cell-header-wrap">
+                <div class="chart-search-wrap">
+                    <div class="chart-search-input">
+                        <input type="text" placeholder="Symbol" aria-label="Symbol search" autocomplete="off">
+                        <div class="chart-search-input-img">
+                            <div class="chart-search-input-img-inner">
+                                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='6.5' cy='6.5' r='5' fill='none' stroke='%23888' stroke-width='1.5'/%3E%3Cpath stroke='%23888' stroke-width='1.5' stroke-linecap='round' d='M10 10l4 4'/%3E%3C/svg%3E" width="8" height="8" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-time-wrap">
+                    <div class="chart-time-button-outer" id="jd-time-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+                        <div class="chart-time-button">
+                            <div class="chart-time-button-inner">
+                                <div class="chart-time-button-title"><span id="jd-time-label">1D</span></div>
+                                <div class="chart-time-button-img">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23aaa' d='M0 1.5L6 7l6-5.5z'/%3E%3C/svg%3E" width="8" height="10" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-time-dropdown-wrap" id="jd-time-dropdown" role="listbox" aria-hidden="true">
+                        <ul class="active">
+                            <li class="active" data-bar-type="1d" data-bar-width="1D" role="option">1D</li>
+                            <li data-bar-type="1w" data-bar-width="1W" role="option">1W</li>
+                            <li data-bar-type="1M" data-bar-width="1M" role="option">1M</li>
+                            <li data-bar-type="4h" data-bar-width="4h" role="option">4H</li>
+                            <li data-bar-type="1h" data-bar-width="1h" role="option">1H</li>
+                            <li data-bar-type="15m" data-bar-width="15m" role="option">15m</li>
+                            <li data-bar-type="5m" data-bar-width="5m" role="option">5m</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="chart-config-wrap">
+                    <div class="chart-config-outer" id="jd-chart-config-trigger" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false">
+                        <div class="chart-config">
+                            <div class="chart-config-inner">
+                                <div class="chart-config-title"><span id="jd-chart-type-label">Candlestick</span></div>
+                                <div class="chart-config-img">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23aaa' d='M0 1.5L6 7l6-5.5z'/%3E%3C/svg%3E" width="8" height="10" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-wrap dropdown-wrap-main" id="jd-chart-config-dropdown" aria-hidden="true">
+                        <div class="chart-table-wrap">
+                            <table class="chart-table">
+                                <tbody>
+                                    <tr>
+                                        <td>Chart type</td>
+                                        <td>
+                                            <ul class="mm-chart-config" data-mm="charttype">
+                                                <li data-val="ohlc" role="option">OHLC</li>
+                                                <li class="active" data-val="candlestick" role="option">Candlestick</li>
+                                                <li data-val="line" role="option">Line</li>
+                                                <li data-val="area" role="option">Area</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Y-axis padding</td>
+                                        <td>
+                                            <ul class="mm-chart-config" data-mm="depth">
+                                                <li class="active" data-val="0.05" role="option">5%</li>
+                                                <li data-val="0.1" role="option">10%</li>
+                                                <li data-val="0.15" role="option">15%</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-wrap">
+            <div class="chart-loading">
+                <span>Loading</span>
+            </div>
+
+            <div class="chart-hud unselectable">
+                <div class="chart-hud-title">
+                    <span></span>
+                </div>
+
+                <div class="chart-ohlc-readout unselectable">
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="temp"></div>
+    <script type="module" src="./dist/demo/demo.js"></script>
+    <div id="series_tab_template" class="template">
+        <div class="series-tab">
+            <div class="series-tab-title">
+                <span class="vert-align"></span>
+            </div>
+            <div class="series-tab-icons">
+                <div class="series-tab-ico">
+                    <img class="series-tab-close vert-align" src="img/close.png"></img>
+                </div>
+                <div class="series-tab-ico">
+                    <img class="series-tab-settings vert-align" src="img/hammer.png"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

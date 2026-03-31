@@ -1,6 +1,8 @@
 # JDCharts
 
-Canvas charting for financial market data!
+JDCharts is a JavaScript charting library for financial market data.
+
+![JDCharts demo: candlestick chart](docs/demo-screenshot.png)
 
 ## Usage
 

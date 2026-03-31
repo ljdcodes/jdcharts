@@ -11,15 +11,15 @@ describe('DEMO_DATASETS', () => {
 		for (const d of DEMO_DATASETS) {
 			const parts = d.payload.split('::');
 			expect(parts.length).toBeGreaterThanOrEqual(3);
-			expect(parts[0]).toBe('binance');
+			expect(['binance', 'demo']).toContain(parts[0]);
 		}
 	});
 });
 
 describe('getDemoDatasetById', () => {
 	it('returns a row for known id', () => {
-		const btc = getDemoDatasetById('btc');
-		expect(btc?.label).toContain('Bitcoin');
+		expect(getDemoDatasetById('btc')?.label).toBe('BTC');
+		expect(getDemoDatasetById('silver')?.payload.startsWith('demo::')).toBe(true);
 	});
 
 	it('returns undefined for unknown id', () => {

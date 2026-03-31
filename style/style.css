@@ -136,16 +136,10 @@ body {
 }
 
 .demo-dataset-heading {
-	margin: 0 0 6px;
+	margin: 0 0 10px;
 	font-size: 1rem;
 	font-weight: 600;
 	color: #e8e8e8;
-}
-
-.demo-dataset-hint {
-	margin: 0 0 10px;
-	font-size: 12px;
-	color: #888;
 }
 
 .demo-dataset-list {
@@ -190,6 +184,55 @@ body {
 	float: none !important;
 	flex: 0 0 auto;
 	padding-left: 0 !important;
+}
+
+/* Timeframe + chart-type triggers: library used 20px height + 5px padding — text sat low; center with flex */
+.chart-time-button-outer,
+.chart-config-outer {
+	height: auto !important;
+	min-height: 22px;
+}
+
+.chart-time-button,
+.chart-config {
+	height: auto !important;
+	min-height: 22px;
+}
+
+.chart-time-button-inner,
+.chart-config-inner {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	float: none !important;
+	padding: 3px 8px !important;
+	box-sizing: border-box;
+	min-height: 22px;
+	height: auto !important;
+}
+
+.chart-time-button-title,
+.chart-config-title {
+	float: none !important;
+	height: auto !important;
+	display: flex;
+	align-items: center;
+	line-height: 1.2;
+}
+
+.chart-time-button-img,
+.chart-config-img {
+	float: none !important;
+	height: auto !important;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	padding-left: 10px !important;
+}
+
+.chart-time-button-img img,
+.chart-config-img img {
+	display: block;
 }
 
 .chart-wrap {

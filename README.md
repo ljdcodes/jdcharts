@@ -25,7 +25,3 @@ npm install
 npm run build
 npm run preview
 ```
-
-## Source
-
-[github.com/ljdcodes/jdcharts](https://github.com/ljdcodes/jdcharts)
